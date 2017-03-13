@@ -12,7 +12,7 @@ import { XMLBodyComponent } from './xmlbody';
 
 export class ManagementComponent implements OnInit {
   public startTime: any = new Date('1/1/1970');
-  public endTime: any = new Date();
+  public endTime: any;
   public limit: number = 20;
   public page: number = 1;
   public perPage: any[] = [10, 20, 50, 100];
@@ -25,6 +25,8 @@ export class ManagementComponent implements OnInit {
     private session: SessionService,
     private loggingservice: ManagementLoggingService
   ) {
+    let today = new Date();
+    this.endTime = new Date(today.setHours(23,59,59,999));
     this.page = this.session.get('managementPage') || 1;
     this.limit = this.session.get('managementLimit') || 10;
   }
@@ -82,7 +84,8 @@ export class ManagementComponent implements OnInit {
   }
 
   public changeEndTime(time: any) {
-    this.endTime = time;
+    let endTime = new Date(time);
+    this.endTime = new Date(endTime.setHours(23,59,59,999));
     this.getLoggings(this.page, this.limit);
   }
 

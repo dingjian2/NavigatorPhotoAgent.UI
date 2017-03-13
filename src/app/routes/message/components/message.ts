@@ -25,6 +25,8 @@ export class MessageComponent implements OnInit {
     private session: SessionService,
     private loggingservice: MessageLoggingService
   ) {
+    let today = new Date();
+    this.endTime = new Date(today.setHours(23, 59, 59, 999));
     this.currentPage = this.session.get('messagePage') || 1;
     this.limit = this.session.get('messageLimit') || 10;
   }
@@ -73,8 +75,9 @@ export class MessageComponent implements OnInit {
   }
 
   public changeEndTime(time: any) {
-    this.endTime = time;
-    this.getLoggings(this.currentPage, this.limit);
+    let endTime = new Date(time);
+    this.endTime = new Date(endTime.setHours(23, 59, 59, 999));
+    this.getLoggings(this.page, this.limit);
   }
 
   public changeKeyword(keyword: any) {
@@ -88,4 +91,3 @@ export class MessageComponent implements OnInit {
 
 
 }
-
