@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 
 import { DiagnosticsComponent } from './diagnostics/components/diagnostics';
 import { ManagementComponent } from './management/components/management';
+import { XMLBodyComponent } from './management/components/xmlbody';
 import { MessageComponent } from './message/components/message';
 import { PhotoComponent } from './photo/components/photo';
 
@@ -39,6 +40,7 @@ import appRoutes from './routes';
     HomeComponent,
     DiagnosticsComponent,
     ManagementComponent,
+    XMLBodyComponent,
     MessageComponent,
     PhotoComponent,
     FeedComponent,
@@ -57,6 +59,7 @@ import appRoutes from './routes';
     HomeComponent,
     DiagnosticsComponent,
     ManagementComponent,
+    XMLBodyComponent,
     MessageComponent,
     PhotoComponent,
     FilterSelectboxComponent,

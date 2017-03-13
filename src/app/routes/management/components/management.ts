@@ -1,10 +1,8 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
-
-import { AppSettings } from '../../appsettings';
 
 import { SessionService } from '../../../shared/services/session';
 import { ManagementLoggingService } from '../services/management';
+import { XMLBodyComponent } from './xmlbody';
 
 @Component({
   selector: 'management',
@@ -21,6 +19,7 @@ export class ManagementComponent implements OnInit {
   public method: string = '';
   public methods: any[] = ['GET', 'POST'];
   public items: any = {};
+  public xmlbody: string;
 
   constructor(
     private session: SessionService,
@@ -49,6 +48,16 @@ export class ManagementComponent implements OnInit {
       },
       err => console.error(err),
       () => console.log('done loading API managementLogging')
+    );
+  }
+
+  public getLoggingXmlId(logId: string ) {
+    this.loggingservice.getLoggingXmlId(logId).subscribe(
+      res => {
+        this.xmlbody = res;
+      },
+      err => console.error(err),
+      () => console.log('done loading API managementLoggingXML')
     );
   }
 

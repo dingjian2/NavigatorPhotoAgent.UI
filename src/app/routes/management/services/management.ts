@@ -48,11 +48,11 @@ export class ManagementLoggingService {
       .map((res: Response) => res.json());
   };
 
-  getLoggingId(id: number) {
+  getLoggingId(id: string) {
     return this.http.get(`${AppSettings.ApiEndpoint}httplogging/${id}`)
       .map((res: Response) => res.json());
   };
-  getLoggingXmlId(id: number) {
+  getLoggingXmlId(id: string) {
     return this.http.get(`${AppSettings.ApiEndpoint}httplogging/xml/${id}`)
       .map((res: Response) => res.text());
   };

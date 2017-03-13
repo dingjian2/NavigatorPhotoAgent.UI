@@ -5,8 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HttpModule, Http } from '@angular/http';
 // import { SelectModule } from 'ng2-select/ng2-select';
 // import { ToasterModule } from 'angular2-toaster/angular2-toaster';
-import { DatepickerModule, PaginationModule, CollapseModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { ModalModule } from 'ng2-modal';
+import { DatepickerModule, PaginationModule, CollapseModule, ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { ColorsService } from './colors/colors.service';
 import { SessionService } from './services/session';
@@ -24,8 +23,7 @@ import { CharactersPipe } from './pipes/characters';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    DatepickerModule, PaginationModule, CollapseModule,
-    ModalModule,
+    DatepickerModule, PaginationModule, CollapseModule, ModalModule,
     // SelectModule,
     // ToasterModule
   ],
@@ -47,9 +45,8 @@ import { CharactersPipe } from './pipes/characters';
     ReactiveFormsModule,
     HttpModule,
     RouterModule,
-    DatepickerModule, PaginationModule, CollapseModule,
+    DatepickerModule, PaginationModule, CollapseModule, ModalModule,
     // ToasterModule,
-    ModalModule,
 
     TrimPipe,
     CapitalizePipe,
